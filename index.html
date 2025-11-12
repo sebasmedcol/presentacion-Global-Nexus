@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MVM NEXUS AI — Presentación</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">MVM</div>
+        <div class="brand-text">
+          <h1>MVM NEXUS AI</h1>
+          <p class="small">Seguimiento e incentivos para proyectos con IA — Sector Energía</p>
+        </div>
+      </div>
+      <nav class="controls">
+        <button class="chip" id="prev">← Anterior</button>
+        <button class="chip primary" id="next">Siguiente →</button>
+        <button class="chip ghost" id="toggleDemo">Demo</button>
+      </nav>
+    </header>
+
+    <main class="content animate">
+      <section class="slides" id="slidesArea">
+
+        <!-- Slide 1: Justificación estratégica -->
+        <article class="slide active" data-slide="1">
+          <div class="hero">
+            <div class="left">
+              <span class="pill">Justificación estratégica</span>
+              <h2>Por qué NEXUS impulsa la innovación con IA</h2>
+              <p class="lead">
+                En el sector energético, la adopción de Inteligencia Artificial (IA) no solo optimiza procesos,
+                sino que también redefine la forma en que las organizaciones toman decisiones, innovan y generan valor.
+                MVM NEXUS AI surge como una herramienta que conecta la estrategia tecnológica con los resultados del
+                talento humano,
+                permitiendo que los equipos líderes reciban incentivos por logros medibles en proyectos con IA
+                integrada.
+              </p>
+              <p class="lead">
+                La plataforma impulsa una cultura de innovación sostenible, estandariza la gestión de proyectos de IA y
+                ofrece trazabilidad total,
+                reduciendo reprocesos y fomentando la experimentación responsable. Con incentivos bien estructurados,
+                NEXUS convierte cada iniciativa tecnológica en una oportunidad real de crecimiento para las personas y
+                la empresa.
+              </p>
+
+              <div class="feature-row">
+                <div class="feature card tint-blue">
+                  <strong>Beneficio</strong>
+                  <p class="muted">Mayor adopción tecnológica y eficiencia operativa.</p>
+                </div>
+                <div class="feature card tint-purple">
+                  <strong>Impacto</strong>
+                  <p class="muted">Equipos motivados y alineados con la transformación digital.</p>
+                </div>
+              </div>
+            </div>
+
+            <aside class="right card summary tint-orange">
+              <strong>Resumen</strong>
+              <p class="muted">Métricas, gobernanza y MLOps transforman ideas en productos.
+                Los incentivos alinean la innovación con los objetivos del negocio, generando una cultura que valora el
+                aprendizaje continuo.</p>
+              <div class="meta">
+                <small>MVM NEXUS AI — Conecta con tu equipo para impulsar la innovación con IA.</small>
+              </div>
+            </aside>
+          </div>
+        </article>
+
+        <!-- Slide 2: Flujo -->
+        <article class="slide" data-slide="2">
+          <h2>Flujo principal de NEXUS</h2>
+          <div class="grid-2">
+            <div class="card tint-blue">
+              <h3>1. Registro y envío</h3>
+              <p>Líderes suben proyecto con nivel de IA, historias, duración y evidencia opcional (pdf/xlsx).</p>
+            </div>
+            <div class="card tint-purple">
+              <h3>2. Revisión y aprobación</h3>
+              <p>Gerente asigna incentivos, aprueba, devuelve o rechaza. IA puede evitar duplicados.</p>
+            </div>
+            <div class="card tint-green">
+              <h3>3. Seguimiento</h3>
+              <p>Líder sube evidencias por historia. Gerente aprueba para actualizar progreso.</p>
+            </div>
+            <div class="card tint-orange">
+              <h3>4. Entrega de incentivo</h3>
+              <p>Al completar, incentivos se entregan según reglas (económico, laboral, temporal).</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 3: Reglas -->
+        <article class="slide" data-slide="3">
+          <h2>Reglas y anexos</h2>
+          <ul>
+            <li>Sólo evidencia en PDF o Excel (nota visible al líder).</li>
+            <li>Botón cancelar disponible en Pendiente o Aprobado (requiere justificación).</li>
+            <li>En "En Revisión" no se puede cancelar.</li>
+            <li>Proyectos aprobados entran a NEXUS para producción y seguimiento.</li>
+          </ul>
+          <div class="card mt tint-purple">
+            <strong>Control de duplicados con IA</strong>
+            <p class="muted">Algoritmo de similitud compara título, descriptores y resumen para evitar envíos repetidos.
+            </p>
+          </div>
+        </article>
+
+        <!-- Slide 4: Demo -->
+        <article class="slide" data-slide="4">
+          <h2>Demo interactiva — Proyectos</h2>
+          <p class="muted">Simula aprobar, devolver, subir evidencia y ver cómo cambia la barra de progreso.</p>
+          <div class="mt">
+            <a class="chip primary" href="https://ppssppf.github.io/Global_Nexus_AI/" target="_blank"
+              rel="noopener">Accede al Demo WEB</a>
+          </div>
+          <div class="projects" id="projectsList"></div>
+          <div class="actions">
+            <button class="chip primary" id="addDemo">Añadir proyecto demo</button>
+            <button class="chip" id="resetDemo">Reset demo</button>
+            <div class="note muted">Nota: solo PDF/XLSX como evidencia (simulado)</div>
+          </div>
+        </article>
+
+        <!-- Slide 5: Roadmap visual (120 días) -->
+        <article class="slide" data-slide="5">
+          <h2>Roadmap de adopción (120 días)</h2>
+
+          <div class="roadmap">
+            <div class="progress-line"><i id="roadmapProgress"></i></div>
+            <div class="phases">
+              <div class="phase" data-phase="1">Diagnóstico</div>
+              <div class="phase" data-phase="2">Prototipado</div>
+              <div class="phase" data-phase="3">Productización</div>
+              <div class="phase" data-phase="4">Consolidación</div>
+            </div>
+          </div>
+
+          <div id="phaseDescription" class="mt card tint-blue">
+            <strong>Fase 1 — Diagnóstico y Comité Estratégico (0–30 días)</strong>
+            <p class="muted">
+              Se identifican los casos de uso de IA más valiosos para la organización energética.
+              Se conforma el comité de IA (steering group) con líderes de innovación, TI y operaciones,
+              definiendo prioridades, métricas y criterios de éxito.
+            </p>
+          </div>
+
+          <div class="actions mt">
+            <button class="chip primary" id="nextPhase">Siguiente fase</button>
+            <button class="chip ghost" id="resetPhase">Reiniciar roadmap</button>
+          </div>
+        </article>
+
+        <!-- Slide 6: Conclusión -->
+        <article class="slide" data-slide="6">
+          <h2>Conclusión</h2>
+          <p class="lead">MVM NEXUS AI estandariza la innovación, reduce reprocesos y acelera entregas.
+            Los incentivos alinean objetivos de negocio y promueven experimentación responsable con IA.</p>
+          <div class="row mt">
+            <div class="card tint-green">
+              <strong>Próximo paso</strong>
+              <p class="muted">Publicar prototipo en GitHub Pages y arrancar pilotos.</p>
+            </div>
+            <div class="card tint-blue">
+              <strong>Contacto</strong>
+              <p class="muted">Equipo Producto • Equipo IA</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <aside class="sidepanel">
+        <div class="panel card">
+          <h3>Panel Gerente / Líder (demo)</h3>
+          <p class="muted">Controles rápidos para demostrar reglas y flujo.</p>
+          <div class="form-row">
+            <select id="filterState" class="input">
+              <option value="all">Todos</option>
+              <option value="pending">Pendiente</option>
+              <option value="approved">Aprobado</option>
+              <option value="inreview">En revisión</option>
+              <option value="completed">Completado</option>
+            </select>
+            <button class="chip" id="autoAssign">Auto-assign</button>
+          </div>
+          <div class="card mt small">
+            <strong>Histórico (demo)</strong>
+            <div class="history" id="historyTable"></div>
+          </div>
+          <div class="muted small mt">
+            Reglas incluidas: solo PDF/XLSX, botones devolver, aprobar progreso y cancelar (con justificación).
+          </div>
+        </div>
+      </aside>
+    </main>
+    <!-- MODAL ASIGNAR INCENTIVO -->
+    <div class="modal-backdrop" id="modalBg">
+      <div class="modal card">
+        <h3>Asignar incentivo</h3>
+        <div class="form-row">
+          <select id="incentiveType" class="input">
+            <option value="economico">Económico</option>
+            <option value="laboral">Laboral</option>
+            <option value="temporal">Temporal</option>
+          </select>
+          <input id="incentiveNote" class="input" placeholder="Nota (opcional)" />
+        </div>
+        <div class="form-row end">
+          <button class="chip" id="closeModal">Cerrar</button>
+          <button class="chip primary" id="saveIncentive">Guardar & Aprobar</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer card small">
+      <div>MVM NEXUS AI • Prototype</div>
+      <div><button class="chip" id="downloadHtml">Descargar HTML</button></div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
